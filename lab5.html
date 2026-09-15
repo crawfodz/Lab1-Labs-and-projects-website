@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .letters {
+      display: flex;
+      gap: 30px;
+      margin: 40px;
+    }
+
+    .letter {
+      position: relative;
+      width: 60px;
+      height: 80px;
+    }
+
+    .bar {
+      position: absolute;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+    <div class="letters">
+
+    <div class="letter">
+        <div class="bar" style="width: 12px; height: 40px; left: 8px; transform: rotate(-30deg);"></div>
+        <div class="bar" style="width: 12px; height: 40px; right: 8px; transform: rotate(30deg);"></div>
+        <div class="bar" style="width: 12px; height: 46px; left: 24px; bottom: 0;"></div>
+    </div>
+
+    <div class="letter">
+        <div class="bar" style="width: 12px; height: 80px; left: 0;"></div>
+        <div class="bar" style="width: 60px; height: 12px; top: 0;"></div>
+        <div class="bar" style="width: 50px; height: 12px; top: 34px;"></div>
+        <div class="bar" style="width: 60px; height: 12px; bottom: 0;"></div>
+    </div>
+
+    <div class="letter">
+        <div class="bar" style="width: 60px; height: 12px; top: 0;"></div>
+        <div class="bar" style="width: 12px; height: 80px; left: 24px;"></div>
+    </div>
+  </div>
+</body>
+</html>
