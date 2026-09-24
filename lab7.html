@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonry</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #flexParent{
+            display: flex;
+            align-items: stretch;
+        }
+        #leftBar{
+            display: flex;
+            width: 400px;
+            height: 100vh;
+            background-color: orange;
+            justify-content: space-evenly;
+        }
+        #inBar{
+            width: 25px;
+        }
+        #one{
+            align-self: flex-start;
+        }
+        #rightBar{
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: auto;
+        }
+        img{
+            flex-grow: 1;
+            margin: 2px;
+        }
+        #four{
+            padding-top: 87vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="flexParent">
+        <div id="leftBar">
+            <div id="inBar">
+                <div id="one">&#x1F4F7;&#x1F5C4;&#xfe0f;&#x2764;&#xfe0f;</div>
+            <div id="four">&#x1F5D1;&#xfe0f;</div>
+            </div>
+        </div>
+        <div id="rightBar">
+            <img src="https://picsum.photos/100/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/100/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/300/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/400/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/400/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/100/100" alt="randomImage">
+            <img src="https://picsum.photos/400/100" alt="randomImage">
+            <img src="https://picsum.photos/300/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/100/100" alt="randomImage">
+            <img src="https://picsum.photos/300/100" alt="randomImage">
+            <img src="https://picsum.photos/400/100" alt="randomImage">
+            <img src="https://picsum.photos/200/100" alt="randomImage">
+            <img src="https://picsum.photos/400/100" alt="randomImage">
+            
+            
+        </div>
+    </div>
+</body>
+</html>
