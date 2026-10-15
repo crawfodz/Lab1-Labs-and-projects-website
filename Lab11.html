@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab11</title>
+</head>
+<style>
+    #button{
+        background-color: blue;
+        color: aliceblue;
+        padding: 5px;
+        text-align: center;
+        width: 200px;
+    }
+    #button:hover{
+        cursor: pointer;
+    }
+    #area{
+        width: 75vh;
+        height: 75vh;
+        border: solid 1px;
+    }
+</style>
+<body>
+    <p id='button'>Click Me! 😊</p>
+    <div id="area">
+        move your mouse here
+    </div>
+
+    <script>
+        const button = document.getElementById("button");
+        const area = document.getElementById("area");
+        
+        button.addEventListener("mouseover", function (){
+        button.textContent = "Do not click! 😠";
+        button.style.backgroundColor = "yellow";
+        });
+
+        button.addEventListener("mouseleave", function (){
+        button.textContent = "Phew! 😌";
+        button.style.backgroundColor = "lightgreen";
+        });
+
+        button.addEventListener("click", function (){
+        button.textContent = "Ouch! 🤕";
+        button.style.backgroundColor = "red";
+        });
+
+        button.addEventListener("dblclick", function (){
+        button.textContent = "Double trouble! 🤩";
+        button.style.backgroundColor = "pink";
+        });
+
+        area.addEventListener("mouseover", function (){
+        button.textContent = "I see you! 👀";
+        button.style.backgroundColor = "lightblue";
+        });
+
+        area.addEventListener("mouseleave", function (){
+        button.textContent = "Click Me! 😊";
+        button.style.backgroundColor = "blue";
+        });
+    </script>
+</body>
+</html>
