@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab12</title>
+</head>
+<body>
+    <form action="#" id="name">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="displayName"></p>
+
+    <form action="#" id="calc">
+        <label for="first">First number: </label>
+        <input type="number" id="first" required>
+        <label for="second">Second number: </label>
+        <input type="number" id="second" required>
+        <button type="submit">Submit</button>
+        <br>
+
+        <input type="radio" id="add" name="op" value="add" required>
+        <label for="add">Addition (+)</label>
+        <input type="radio" id="subtract" name="op" value="subtract">
+        <label for="subtract">Subtraction (-)</label>
+        <input type="radio" id="multiply" name="op" value="multiply">
+        <label for="multiply">Multiplication (x)</label>
+        <input type="radio" id="divide" name="op" value="divide">
+        <label for="divide">Division (/)</label>
+    </form>
+
+    <p id="displayNumbers"></p>
+
+    <button type="button" id="clearAll">Clear All</button>
+
+    <script>
+        const formOne = document.getElementById('name');
+        const nameInput = document.getElementById('userName');
+        const displayParagraph = document.getElementById('displayName');
+
+        formOne.addEventListener('submit', function(event){
+            event.preventDefault();
+            displayParagraph.textContent = "Hello " + nameInput.value;
+        });
+
+        const formTwo = document.getElementById('calc');
+        const numberOne = document.getElementById('first');
+        const numberTwo = document.getElementById('second');
+        const displayNumbers = document.getElementById('displayNumbers');
+
+        formTwo.addEventListener('submit', function(event){
+            event.preventDefault();
+
+            // .value is a string, so convert to numbers before doing math
+            const a = Number(numberOne.value);
+            const b = Number(numberTwo.value);
+            const selected = document.querySelector('input[name="op"]:checked');
+            let result;
+
+            if (selected.value === "add") {
+                result = a + " + " + b + " = " + (a + b);
+            } else if (selected.value === "subtract") {
+                result = a + " - " + b + " = " + (a - b);
+            } else if (selected.value === "multiply") {
+                result = a + " x " + b + " = " + (a * b);
+            } else if (selected.value === "divide") {
+                if (b === 0) {
+                    result = "Cannot divide by zero";
+                } else {
+                    result = a + " / " + b + " = " + (a / b);
+                }
+            }
+
+            displayNumbers.textContent = result;
+        });
+
+        const clearButton = document.getElementById('clearAll');
+
+        clearButton.addEventListener('click', function(){
+            formOne.reset();
+            formTwo.reset();
+            displayParagraph.textContent = "";
+            displayNumbers.textContent = "";
+        });
+    </script>
+
+</body>
+</html>
