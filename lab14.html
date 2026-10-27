@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User</title>
+</head>
+<body>
+    <h1>Random User Profile</h1>
+    <script>
+        let card = document.createElement('div');
+        let img = document.createElement('img');
+        let userName = document.createElement('h2');
+        let email = document.createElement('p');
+        let phone = document.createElement('p');
+        let form = document.createElement('form');
+        let bttn = document.createElement('button');
+
+        form.action = '#';
+        bttn.type = 'button';
+        bttn.textContent = 'Generate Profile';
+        form.appendChild(bttn);
+        document.body.appendChild(form);
+
+        card.style.width = '250px';
+        card.style.padding = '20px';
+        card.style.marginTop = '20px';
+        card.style.border = '1px solid black';
+        card.style.textAlign = 'center';
+        img.style.borderRadius = '50%';
+
+        card.appendChild(img);
+        card.appendChild(userName);
+        card.appendChild(email);
+        card.appendChild(phone);
+
+        const getUser = async()=>{
+        try{
+            let data = await fetch('https://randomuser.me/api/');
+            data = await data.json();
+            let user = data.results[0];
+
+            img.src = user.picture.large;
+            img.alt = 'user picture';
+            userName.textContent = user.name.first + ' ' + user.name.last;
+            email.textContent = 'Email: ' + user.email;
+            phone.textContent = 'Phone: ' + user.phone;
+            document.body.appendChild(card);
+
+        }catch(reason){console.log(reason);}
+
+        }
+        bttn.addEventListener('click', getUser);
+        getUser();
+    </script>
+</body>
+</html>
